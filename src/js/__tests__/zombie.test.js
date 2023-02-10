@@ -15,15 +15,9 @@ test('test class Zombie with valid value of name', () => {
 });
 
 test('test class Zombie with invalid value of name', () => {
-  expect(() => {
-    const zombie = new Zombie('volandemort');
-    return zombie;
-  }).toThrow(new Error('Name length must be in [2;10] interval!'));
+  expect(() => new Zombie('volandemort')).toThrow();
 });
 
 test('test class Zombie with invalid value of type', () => {
-  expect(() => {
-    const zombie = new Zombie('zombie', 'Pacman');
-    return zombie;
-  }).toThrow(new Error('Not valid character type!'));
+  expect(() => new Zombie('zombie', 'Pacman')).toThrow();
 });

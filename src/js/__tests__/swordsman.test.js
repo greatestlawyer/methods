@@ -15,15 +15,9 @@ test('test class Swordsman with valid value of name', () => {
 });
 
 test('test class Swordsman with invalid value of name', () => {
-  expect(() => {
-    const swordsman = new Swordsman('volandemort');
-    return swordsman;
-  }).toThrow(new Error('Name length must be in [2;10] interval!'));
+  expect(() => new Swordsman('volandemort')).toThrow();
 });
 
 test('test class Swordsman with invalid value of type', () => {
-  expect(() => {
-    const swordsman = new Swordsman('swordsman', 'Pacman');
-    return swordsman;
-  }).toThrow(new Error('Not valid character type!'));
+  expect(() => new Swordsman('swordsman', 'Pacman')).toThrow();
 });

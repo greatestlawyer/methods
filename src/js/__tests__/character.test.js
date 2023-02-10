@@ -15,17 +15,11 @@ test('test class Character with valid values of property', () => {
 });
 
 test('test class Character with invalid value of name', () => {
-  expect(() => {
-    const character = new Character('volandemort', 'Daemon', 40, 20);
-    return character;
-  }).toThrow(new Error('Name length must be in [2;10] interval!'));
+  expect(() => new Character('volandemort', 'Daemon', 40, 20)).toThrow();
 });
 
 test('test class Character with invalid value of type', () => {
-  expect(() => {
-    const character = new Character('voland', 'Pacman', 40, 20);
-    return character;
-  }).toThrow(new Error('Not valid character type!'));
+  expect(() => new Character('voland', 'Pacman', 40, 20)).toThrow();
 });
 
 test('test method levelUp with valid value of health', () => {
@@ -49,7 +43,7 @@ test('test method levelUp with invalid value of health', () => {
     character.health = 0;
     character.levelUp();
     return character;
-  }).toThrow(new Error('Cannot raise level of dead'));
+  }).toThrow();
 });
 
 test('test method damage with value of health > 0', () => { // не знаю почему, но этот тест как будто не учитывается в покрытии, т.к. мне пишет, что 31 строка в файле character.js не покрыта

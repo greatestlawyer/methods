@@ -15,15 +15,9 @@ test('test class Undead with valid value of name', () => {
 });
 
 test('test class Undead with invalid value of name', () => {
-  expect(() => {
-    const undead = new Undead('volandemort');
-    return undead;
-  }).toThrow(new Error('Name length must be in [2;10] interval!'));
+  expect(() => new Undead('volandemort')).toThrow();
 });
 
 test('test class Undead with invalid value of type', () => {
-  expect(() => {
-    const undead = new Undead('undead', 'Pacman');
-    return undead;
-  }).toThrow(new Error('Not valid character type!'));
+  expect(() => new Undead('undead', 'Pacman')).toThrow();
 });

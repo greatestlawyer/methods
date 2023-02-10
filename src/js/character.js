@@ -1,5 +1,5 @@
 export default class Character {
-  constructor(name, type, attack, defence, health = 100, level = 1) {
+  constructor(name, type, attack, defence) {
     if (name.length < 2 || name.length > 10) {
       throw new Error('Name length must be in [2;10] interval!');
     }
@@ -18,8 +18,8 @@ export default class Character {
 
     this.name = name;
     this.type = type;
-    this.health = health;
-    this.level = level;
+    this.health = 100;
+    this.level = 1;
     this.attack = attack;
     this.defence = defence;
   }
